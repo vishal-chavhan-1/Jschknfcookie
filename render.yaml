@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: netflix-cookie-checker
+    runtime: node
+    repo: https://github.com/YOUR_USERNAME/netflix-cookie-checker
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+        description: Your Telegram Bot Token from @BotFather
+      - key: CHAT_ID
+        sync: false
+        description: Your Telegram Chat ID (can be your personal chat ID)
+      - key: RENDER_EXTERNAL_URL
+        value: https://netflix-cookie-checker.onrender.com
+        description: Your Render app URL (auto-filled by Render)
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
